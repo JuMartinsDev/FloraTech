@@ -1,2 +1,2 @@
-# FloraTech
-Este projeto, em parceria com a FIAP e a Natura, busca melhorar o engajamento das consultoras por meio de uma aplicação que permite visualizar produtos, analisar vendas e desempenho, e interagir via chat. A solução se conecta a um banco de dados para fornecer dados dos produtos mais vendidos e outras métricas relevantes.
+# FloraTech 
+Este projeto foi desenvolvido como parte de uma solução para um problema proposto pela Natura, parceira da FIAP neste ano. A aplicação oferece funcionalidades voltadas para as consultoras, como visualização de produtos, análise de vendas, desempenho e um chat interativo. Ela se conecta a um banco de dados para obter informações sobre produtos mais vendidos, rankings e outras métricas essenciais. Escolhemos essa abordagem porque, antes de aumentar as vendas, é fundamental promover a organização e a visualização dos dados por meio de dashboards, gráficos e uma autoanálise.

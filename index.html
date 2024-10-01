@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloraTech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Tela de Login -->
+        <div id="login-screen" class="screen active">
+            <div class="logo">
+                <img class="img-logo" src="./image/FloraTech-removebg-preview.png" alt="Logo da FloraTech">
+            </div>
+            <h1>Bem vindo à FloraTech</h1>
+            <form onsubmit="login(event)">
+                <input type="text" name="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button class="button-secondary" type="button" onclick="showScreen('forgot-password')">Esqueci minha senha</button>
+                <button type="submit">Login</button>
+                <button class="button-create-account" type="button" onclick="showScreen('create-account')">Criar conta</button>
+            </form>
+        </div>
+
+        <!-- Tela Principal -->
+        <div id="main-screen" class="screen">
+            <div class="teste">
+                <div class="menu-item" onclick="showScreen('product-recommendations')">
+                    <img class="img-icones" src="./image/icone de produto.png" alt="Ícone de Produto">
+                    <h2>Produtos</h2>
+                </div>
+                <div class="menu-item" onclick="showScreen('sales-analysis')">
+                    <img class="img-icones" src="./image/icone de vendas.png" alt="Ícone de Vendas">
+                    <h2>Vendas</h2>
+                </div>
+                <div class="menu-item" onclick="showScreen('performance-analysis')">
+                    <img class="img-icones" src="./image/icone de desenvolvimento.png" alt="Ícone de Desenvolvimento">
+                    <h2>Desempenho</h2>
+                </div>
+                <div class="menu-item" onclick="showScreen('messages')">
+                    <img class="img-icones" src="./image/icone chat.png" alt="Ícone Chat">
+                    <h2>ChatFlora</h2>
+                </div>
+                <button onclick="showScreen('profile')">Perfil</button>
+            </div>
+        </div>
+
+        <!-- Tela de Recuperação de Senha -->
+        <div id="forgot-password" class="screen">
+            <button class="button-secondary" onclick="showScreen('login-screen')">Voltar</button>
+            <h2>Recuperar senha</h2>
+            <div class="logo">
+                <img class="img-logo" src="./image/FloraTech-removebg-preview.png" alt="Logo da FloraTech">
+            </div>
+            <input type="email" placeholder="Email" required>
+            <button onclick="recoverPassword()">Recuperar Senha</button>
+        </div>
+
+        <!-- Tela de Criação de Conta -->
+        <div id="create-account" class="screen">
+            <button class="button-secondary" onclick="showScreen('login-screen')">Voltar</button>
+            <h2>Criar conta</h2>
+            <form onsubmit="criarConta(event)">
+                <input type="text" placeholder="Primeiro nome" required>
+                <input type="text" placeholder="Sobrenome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="CPF" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Digite novamente a senha" required>
+                <button type="submit">Criar conta</button>
+            </form>
+        </div>
+
+        <!-- Tela de Recomendação de Produtos -->
+        <div id="product-recommendations" class="screen">
+            <button class="button-secondary" onclick="showScreen('main-screen')">Voltar</button>
+            <h2>Recomendação de Produtos</h2>
+            <input type="text" placeholder="Pesquisar" style="margin-bottom: 20px;">
+            <div class="product-grid">
+                <div class="product-item">
+                    <img class="img-prod" src="image/IlíaSecreto50ml.png" alt="Ilía Secreto 50ml">
+                    Ilía Secreto 50 ml
+                </div>
+                <div class="product-item">
+                    <img class="img-prod" src="image/MeuPrimeiroHumorFeminino75 ml.png" alt="Meu Primeiro Humor Feminino 75">
+                    Meu Primeiro Humor Feminino 75 ml
+                </div>
+                <div class="product-item">
+                    <img class="img-prod" src="image/MamãeeBebeÁguadeColônia100ml2.png" alt="MamãeeBebêÁguadeColônia100">
+                    Mamãe e Bebê Água de Colônia 100 ml
+                </div>
+                <div class="product-item">
+                    <img class="img-prod" src="image/ColôniaCorreCorreNaturaNaturé.png" alt="ColôniaCorreCorreNaturaNaturé">
+                    Colônia Corre Corre Natura Naturé
+                </div>
+                <div class="product-item">
+                    <img class="img-prod" src="image/KaiakAeroMasculino100 ml.png" alt="KaiakAeroMasculino100">
+                    Kaiak Aero Masculino 100 ml
+                </div>
+                <div class="product-item">
+                    <img class="img-prod" src="image/EssencialAtoMasculino100ml.png" alt="EssencialAtoMasculino100ml">
+                    Essencial Ato Masculino 100 ml
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Análise de Desempenho -->
+        <div id="performance-analysis" class="screen">
+            <button class="button-secondary" onclick="showScreen('main-screen')">Voltar</button>
+            <h2>Análise de Desempenho</h2>
+            <div class="chart">
+                <img class="img-grafico" src="./image/Grafico.png" alt="Gráfico">
+            </div>
+            <h3>Sugestões</h3>
+            <ul class="suggestions">
+                <li>Sugestão 1 - Kits de Cuidados com a Pele: Crie pacotes com produtos de limpeza, tonificação e hidratação. Os kits podem ser personalizados para diferentes tipos de pele.</li>
+                <li>Sugestão 2 - Hidratantes Corporais: Combinações de cremes e loções com fragrâncias populares ou ingredientes naturais.</li>
+                <li>Sugestão 3 - Linha de Masculinos: Expanda suas ofertas com produtos voltados para o público masculino, como cremes para barbear e cuidados com a pele.</li>
+                <li>Sugestão 4 - Lançamentos e Edições Especiais: Sempre que houver novos lançamentos, promova-os de forma destacada.</li>
+                <li>Sugestão 5 - Promoções e Descontos: Crie promoções sazonais ou pacotes de produtos com desconto para incentivar compras em maior volume.</li>
+            </ul>
+        </div>
+
+        <!-- Tela de Mensagens -->
+        <div id="messages" class="screen">
+            <button class="button-secondary" onclick="showScreen('main-screen')">Voltar</button>
+            <h2>Flora</h2>
+            <div class="message">
+                <strong>Flora:</strong> Olá! Como posso ajudar?
+            </div>
+            <div class="message sent">
+                Preciso de ajuda com meus produtos.
+            </div>
+            <div class="message">
+                <strong>Flora:</strong> Claro, que tipo de ajuda você precisa?
+            </div>
+            <!--<iframe class="screen-chat" src="https://bot.orimon.ai/deploy/index.html?tenantId=61a0b50f-daaf-40c4-a11b-2396aab04cef&testBot=true&defaultOpen=true" frameborder="0"></iframe>-->
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+
+        <!-- Tela de Perfil -->
+        <div id="profile" class="screen">
+            <button class="button-secondary" onclick="showScreen('main-screen')">Voltar</button>
+            <div class="profile-pic"></div>
+            <h2>Ana</h2>
+            <p><strong>Nome:</strong> Ana Silva</p>
+            <p><strong>Categoria:</strong> Semente</p>
+            <p><strong>Telefone:</strong> (11) 1111-2222</p>
+            <p><strong>Email:</strong> ana.silva@email.com</p>
+            <button onclick="editProfile()">Editar Perfil</button>
+        </div>
+
+        <!-- Tela de Análise de Vendas -->
+        <div id="sales-analysis" class="screen">
+            <button class="button-secondary" onclick="showScreen('main-screen')">Voltar</button>
+            <h2>Análise de Vendas</h2>
+            <p><strong>Valor de vendas:</strong> R$ 15.000,00</p>
+            <p><strong>Nº de produtos:</strong> 120</p>
+            <h3>Ranking</h3>
+            <div class="ranking">
+                <div class="ranking-item">
+                    <img src="./image/EssencialMasculino.png" alt="2º Lugar">
+                    <p>2º</p>
+                </div>
+                <div class="ranking-item">
+                    <img src="./image/MamãeeBebêÁguadeColônia100 ml.png" alt="1º Lugar">
+                    <p>1º</p>
+                </div>
+                <div class="ranking-item">
+                    <img src="./image/EkosRyoVivo75ml.png" alt="3º Lugar">
+                    <p>3º</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
